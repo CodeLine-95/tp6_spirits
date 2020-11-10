@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d528c1d0-ef6b-48ff-8893-a88ddbca8fb6" name="默认更改列表" comment="增加说明文件">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index/view/index/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index/view/index/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index/view/index/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -77,21 +81,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/admin/view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/index/view/index" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/admin" />
-      <recent name="$PROJECT_DIR$/app/controller/admin" />
-      <recent name="$PROJECT_DIR$/app/controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/index/view/index" />
       <recent name="$PROJECT_DIR$/app/admin/view" />
       <recent name="$PROJECT_DIR$/app/admin/controller" />
       <recent name="$PROJECT_DIR$/app/admin" />
       <recent name="$PROJECT_DIR$/view/user" />
-      <recent name="$PROJECT_DIR$/view/goods" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/admin" />
+      <recent name="$PROJECT_DIR$/app/controller/admin" />
+      <recent name="$PROJECT_DIR$/app/controller" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -125,7 +129,9 @@
       <workItem from="1604026429768" duration="4964000" />
       <workItem from="1604154427361" duration="4637000" />
       <workItem from="1604229125484" duration="25000" />
-      <workItem from="1604973259170" duration="7335000" />
+      <workItem from="1604973259170" duration="9202000" />
+      <workItem from="1605017796760" duration="561000" />
+      <workItem from="1605018544652" duration="4658000" />
     </task>
     <servers />
   </component>
