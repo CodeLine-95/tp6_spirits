@@ -1,7 +1,21 @@
-ThinkPHP 6.0
+基于`thinkphp6.0.5`内核的白酒售卖
 ===============
-
 > 运行环境要求PHP7.1+。
+
+## 主要功能（第一版）
+
+* 多模块应用开发：`admin` | `index`
+* 登录：验证码、登录验证中间件
+* 用户管理
+  * 管理员：增删改查
+  * 购买用户：查删
+* 商品管理
+  * 商品管理：增删改查
+  * 二维码管理：查
+* 退出
+
+ThinkPHP 6.0.5
+===============
 
 ## 主要新特性
 
@@ -18,35 +32,3 @@ ThinkPHP 6.0
 * 对IDE更加友好
 * 统一和精简大量用法
 
-## 安装
-
-~~~
-composer create-project topthink/think tp 6.0.*
-~~~
-
-如果需要更新框架使用
-~~~
-composer update topthink/framework
-~~~
-
-## 文档
-
-[完全开发手册](https://www.kancloud.cn/manual/thinkphp6_0/content)
-
-## 参与开发
-
-请参阅 [ThinkPHP 核心框架包](https://github.com/top-think/framework)。
-
-## 版权信息
-
-ThinkPHP遵循Apache2开源协议发布，并提供免费使用。
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2006-2020 by ThinkPHP (http://thinkphp.cn)
-
-All rights reserved。
-
-ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
-
-更多细节参阅 [LICENSE.txt](LICENSE.txt)
