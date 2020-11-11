@@ -1,0 +1,99 @@
+body{
+    background: url(/static/img/bgm.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+
+    font-family: "微软雅黑";
+    font-size: 12px;
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-logo {
+    margin: 20px auto;
+    width: 40%;
+}
+
+.input_list {
+    margin: 10px auto;
+    width: 100%;
+}
+
+.colorlist {
+    color: #fff;
+}
+
+.input_list h2 {
+    font-family: "微软雅黑";
+}
+
+.boxlist img {
+    width: 70%;
+    margin-bottom: 10px;
+}
+footer {
+    font-size: 24px;
+    color: white;
+    line-height: 24px;
+}
+
+footer .tel{
+    margin-bottom: 10px;
+}
+
+footer h4{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+footer p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#inputbox {
+    height: 20px;
+    margin: 0px auto;
+    padding: 10px;
+    font-size: 16px;
+    outline: 0px;
+    border-radius: 2px;
+    border: 1px solid #CCCCCC;
+    width: 55%;
+}
+
+input, textarea, select {
+    *font-size: 100%;
+}
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+#determine {
+    outline: 0px;
+    border: 0px;
+    borde-bottom: 1px solid #960000;
+    margin: 10px auto;
+    width: 61%;
+    height: 40px;
+    line-height: 38px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+}
+.WhiteButton {
+    border-color: rgb(255, 138, 138);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(255, 144, 144)), color-stop(0.5, rgb(245, 0, 0)), color-stop(0.5, rgb(236, 0, 0)), to(rgb(152, 0, 0)));
+}

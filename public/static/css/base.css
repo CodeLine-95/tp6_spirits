@@ -1,0 +1,112 @@
+body{
+    background:#f6f6f6;
+}
+.layui-layout-admin .layui-logo{
+    color:#fff;
+    font-size:18px;
+    /*width:320px;*/
+}
+
+.yingke_logo{
+    width:45px;
+    height:45px;
+}
+.yingke_mark{
+    padding-left:10px;
+    font-style: italic;
+    border-left:2px solid rgba(229, 229, 229, 0.41);
+}
+.layui-layout-admin .layui-side{
+    top:100px;
+    background:#fff;
+}
+.layui-layout-admin .layui-body{
+    top:100px;
+    left:210px;
+}
+.layui-layout-admin .layui-header {
+    background-color: rgba(4, 156, 196, 1);
+    color:#fff;
+}
+.yk_header .layui-nav-item a{
+    color:#fff;
+}
+#right_content{
+    width:100%;
+    background:#fff;
+    height:99%;
+}
+.login a{
+    color:#fff;
+}
+.userInfo_module{
+    margin-right:30px;
+    line-height: 30px !important;
+
+}
+.layui-btn-primary:hover{
+    border-color:#fff;
+}
+.layui-nav-tree .layui-nav-child a {
+    height: 40px;
+    line-height: 40px;
+    color: #505050;
+}
+.layui-nav-tree .layui-nav-item a{
+    color:#505050;
+}
+.layui-nav-tree .layui-nav-item.layui-nav-itemed a{
+    color:#505050;
+}
+.layui-nav-itemed>a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover {
+    color: #0a0a0a!important;
+}
+.layui-nav-tree .layui-nav-child, .layui-nav-tree .layui-nav-child a:hover {
+    -background: rgba(42, 172, 228, 0.1);
+    color:rgba(42, 172, 228, 1);
+}
+.layui-nav {
+    position: relative;
+
+    background-color: #ffffff;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 0;
+    box-sizing: border-box;
+}
+.layui-nav-itemed>.layui-nav-child {
+    display: block;
+    padding: 0;
+    background-color: #fff!important;
+}
+.layui-nav-tree .layui-nav-more {
+
+    border-color: #4c4c4c transparent transparent;
+
+}
+.layui-nav-tree .layui-nav-mored, .layui-nav-itemed>a .layui-nav-more {
+    margin-top: -9px;
+    border-style: dashed dashed solid;
+    border-color: transparent transparent #323232;
+}
+.layui-nav-tree .layui-nav-child dd a{
+    margin-left:20px;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+    background-color:rgba(42, 172, 228, 0.1);
+    color:rgba(42, 172, 228, 1);
+}
+.layui-nav-tree .layui-nav-item{
+    margin-bottom: 2px;
+}
+.layui-nav-tree .layui-nav-item>a {
+    color: #505050;
+    background: #f2f2f2;
+}
+.layui-nav-tree .layui-nav-item>a:hover {
+    color: #505050;
+    background: #dcdcdc;
+}
+.yk_tree .layui-nav-bar{
+    display: none;
+}
