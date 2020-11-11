@@ -12,7 +12,7 @@
     <form action="{:url('index/index/result',['code'=>$get['code'],'tel'=>$get['tel']])}" method="post" style="margin-bottom: 100px;">
         <div id="codeDiv">
             <article class="input_list boxlist">
-                {if condition="$get['result_two'] != ''"}
+                {if condition="isset($get['result_two']) && $get['result_two'] != ''"}
                     <h1 id="resulth1" class="colorlist" style=" width:80%; text-align:center; margin-left:40px;">{$get['result_two']}</h1>
                 {else}
                     <h1 id="txtcode" class="colorlist">{$get['code']}</h1>

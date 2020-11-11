@@ -28,8 +28,9 @@ class LoginCheck extends BaseController
                 $url_arr[1] = 'index';
             }
             if ($url_arr[1] == 'admin') {
+                $url_arr[2] = isset($url_arr[2]) ? $url_arr[2] : $url_arr[1];
                 $url_params = explode('?', $url_arr[2]);
-                $url_acition = ($url_params) ? $url_params[0] : $url_arr[2];
+                $url_acition = ($url_params) ? $url_params[0] : $url_arr[1];
                 //过滤 验证码和登录本身链接
                 if (!in_array(str_replace('.html', '', $url_acition), $auth_action)) {
                     return redirect((string)url('admin/login/index'));

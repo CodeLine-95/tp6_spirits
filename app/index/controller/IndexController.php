@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use app\BaseController;
 use think\exception\ValidateException;
+use think\facade\Db;
 
 class IndexController extends BaseController
 {
@@ -20,6 +21,10 @@ class IndexController extends BaseController
                 throw new ValidateException('invalid token');
             }
             unset($params['__token__']);
+            $requie_id = Db::name('users')->where(['good_requie_id'=>$params['code'],'user_tel'=>$params['tel']])->find();
+            if(!$requie_id) {
+                Db::name('users')->insert(['user_tel' => $params['tel'], 'good_requie_id' => $params['code'], 'create_time' => date('Y-m-d H:i:s')]);
+            }
             return redirect(url('index/index/result',$params));
         }else {
             $get = request()->get();
@@ -37,7 +42,7 @@ class IndexController extends BaseController
             $get = request()->get();
             $get['domain'] = request()->domain();
             $get['tel'] = isset($get['tel']) && !empty($get['tel']) ? $get['tel'] : '';
-            $get['result_two'] = '您所查询的编码已经被查询,首次查询时间：'.date('Y-m-d H:i:s').',谨防假冒!';
+            $requie_id = Db::name('users')->where(['good_requie_id'=>$get['code']])->find();
             return view('result', ['get' => $get]);
         }
     }

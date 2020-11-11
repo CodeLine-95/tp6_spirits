@@ -141,15 +141,16 @@ class GoodsController extends CommonController {
             $nextLimit = ($params['page']-1) * $params['pageSize'];
 
             $options = (new QROptions([
-                'version'    => 5,                             //二维码版本
+                'version'    => 7,                             //二维码版本
                 'outputType' => QRCode::OUTPUT_IMAGE_PNG,      //生成图片
                 'eccLevel'   => QRCode::ECC_H,                 //错误级别
-                'scale'      => 10,                            //二维码大小
+                'scale'      => 5,                            //二维码大小
+                'imageBase64'  => true,
             ]));
             $goodsList = Db::name('goods')->order('create_time','desc')->limit($nextLimit,$params['pageSize'])->select()->toArray();
             foreach ($goodsList as $k=>$g){
                 $qrcode = new QRCode($options);
-                $data = $g['requie_id'];
+                $data = "http://tp6.im/index/index/search.html?m=".$g['requie_id'];
                 $goodsList[$k]['qrcodeUrl'] = $qrcode->render($data);
             }
             return json(['code'=>0,'msg'=>'','count'=>$totalCount,'data'=>$goodsList]);
