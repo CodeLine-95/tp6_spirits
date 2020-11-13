@@ -6,11 +6,11 @@ use think\facade\Db;
 
 class UserController extends CommonController
 {
-    public function index(){
-        return view('index');
+    public function buyHistory(){
+        return view('buyHistory');
     }
 
-    public function userList(){
+    public function buyHistoryList(){
         try {
             $params = request()->get();
             if (!isset($params['page']) || $params['page'] <= 0){
@@ -19,13 +19,13 @@ class UserController extends CommonController
             if (!isset($params['pageSize']) || $params['pageSize'] <= 0){
                 $params['page'] = 10;
             }
-            $totalCount = Db::name('users')->count();
+            $totalCount = Db::name('buy_history')->count();
             $lastPage = ceil($totalCount / $params['pageSize']);
             if ($params['page'] > $lastPage && $lastPage > 0){
                 $params['page'] = $lastPage;
             }
             $nextLimit = ($params['page']-1) * $params['pageSize'];
-            $usersList = Db::name('users')->order('create_time','desc')->limit($nextLimit,$params['pageSize'])->select()->toArray();
+            $usersList = Db::name('buy_history')->order('create_time','desc')->limit($nextLimit,$params['pageSize'])->select()->toArray();
 
             return json(['code'=>0,'msg'=>'','count'=>$totalCount,'data'=>$usersList]);
         }catch (\Exception $e){

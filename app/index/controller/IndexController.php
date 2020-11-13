@@ -21,9 +21,9 @@ class IndexController extends BaseController
                 throw new ValidateException('invalid token');
             }
             unset($params['__token__']);
-            $requie_id = Db::name('users')->where(['good_requie_id'=>$params['code'],'user_tel'=>$params['tel']])->find();
+            $requie_id = Db::name('buy_history')->where(['good_requie_id'=>$params['code'],'user_tel'=>$params['tel']])->find();
             if(!$requie_id) {
-                Db::name('users')->insert(['user_tel' => $params['tel'], 'good_requie_id' => $params['code'], 'create_time' => date('Y-m-d H:i:s')]);
+                Db::name('buy_history')->insert(['user_tel' => $params['tel'], 'good_requie_id' => $params['code'], 'create_time' => date('Y-m-d H:i:s')]);
             }
             return redirect(url('index/index/result',$params));
         }else {
@@ -37,12 +37,22 @@ class IndexController extends BaseController
     public function result(){
         if (request()->isPost()){
             $params = request()->post();
-            redirect(url('index/index/result',$params));
+            $requie_id = Db::name('buy_history')->where(['good_requie_id'=>$params['code'],'user_tel'=>$params['tel']])->find();
+            if ($requie_id){
+                $params['result_two'] = "您所查询的酒，在【时间/".$requie_id['create_time']."】被查询，谨防假冒！";
+            }
+            $good = Db::name('goods')->where(['requie_id'=>$params['code']])->find();
+            if(!$good){
+                $good = [];
+                $params['result_two'] = "该产品并未售卖，请联系商家！";
+            }else{
+                $good['buy_time'] = $requie_id['create_time'];
+            }
+            return view('result', ['get' => $params,'good'=>$good]);
         }else {
             $get = request()->get();
             $get['domain'] = request()->domain();
             $get['tel'] = isset($get['tel']) && !empty($get['tel']) ? $get['tel'] : '';
-            $requie_id = Db::name('users')->where(['good_requie_id'=>$get['code']])->find();
             return view('result', ['get' => $get]);
         }
     }

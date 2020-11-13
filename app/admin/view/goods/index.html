@@ -57,12 +57,12 @@
             ,defaultToolbar : false
             ,url: "{:url('goods/goodsList')}"
             ,cols: [[ //表头
-                {field: 'id', title: '编号', width:60, sort: false}
+                {field: 'requie_id', title: '编号', width:''}
                 ,{field: 'goods_name', title: '名称', width:''}
-                ,{field: 'requie_id', title: '编号', width:''}
-                ,{field: 'goods_price', title: '价格', width:100}
-                ,{field: 'goods_source', title: '来源', width:100}
-                ,{field: 'goods_stock', title: '库存量', width: 150}
+                ,{field: 'attention', title: '关注度', width:''}
+                ,{field: 'goods_price', title: '价格', width:''}
+                ,{field: 'goods_stock', title: '库存量', width: ''}
+                ,{field: 'produce_time', title: '生产日期', width: 150}
                 ,{field: 'create_time', title: '创建时间', width: 180}
                 ,{field: 'update_time', title: '更新时间', width: 180}
                 ,{fixed: 'right', title: '操作', width: 150, unresize: true, toolbar: "#rightToolbar"},

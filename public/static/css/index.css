@@ -2,7 +2,6 @@ body{
     background: url(/static/img/bgm.jpg) no-repeat center center;
     background-size: cover;
     min-height: 100vh;
-
     font-family: "微软雅黑";
     font-size: 12px;
     max-width: 640px;
@@ -21,8 +20,9 @@ a {
 }
 
 .input_list {
-    margin: 10px auto;
+    /*margin: 10px auto;*/
     width: 100%;
+    overflow: hidden;
 }
 
 .colorlist {
@@ -37,10 +37,43 @@ a {
     width: 70%;
     margin-bottom: 10px;
 }
+
+.good_list{
+    text-align: left;
+    width: 100%;
+    color: #000;
+    font-size: 16px;
+    margin-top: 50px;
+    background: #ffffff;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-top: 20px;
+}
+
+.good_list p{
+    margin: 0;
+    padding: 0;
+}
+
+.good{
+    height: 32px;
+    line-height: 32px;
+    width: 80%;
+    margin-left: 40px;
+}
+
+.good_desc{
+    font-size: 14px;
+    width: 80%;
+    margin-left: 40px;
+}
+
 footer {
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     line-height: 24px;
+    margin: 0 10px;
+    margin-top: 150px;
 }
 
 footer .tel{
@@ -51,6 +84,7 @@ footer h4{
     margin: 0;
     padding: 0;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 footer p {
     font-size: 14px;

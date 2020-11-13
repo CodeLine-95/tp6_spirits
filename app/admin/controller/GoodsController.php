@@ -47,6 +47,9 @@ class GoodsController extends CommonController {
             $params['requie_id'] = date('Ymd') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
             $params['create_time'] = date('Y-m-d H:i:s');
             $params['update_time'] = date('Y-m-d H:i:s');
+            if (isset($params['goods_pic'])){
+                $params['goods_pic']  = json_encode($params['goods_pic']);
+            }
             return (Db::name('goods')->save($params)) ? json(['msg'=>'保存成功','code'=>0]) : json(['msg'=>'保存失败','code'=>-1]);
         }else {
             return view('add');
@@ -57,10 +60,16 @@ class GoodsController extends CommonController {
         if (request()->isPost()){
             $params = array_filter(request()->post());
             $params['update_time'] = date('Y-m-d H:i:s');
+            if (isset($params['goods_pic'])){
+                $params['goods_pic'] = json_encode($params['goods_pic']);
+            }
             return (Db::name('goods')->update($params)) ? json(['msg'=>'保存成功','code'=>0]) : json(['msg'=>'保存失败','code'=>-1]);
         }else {
             $params = request()->get();
             $field = Db::name('goods')->where(['id'=>$params['id']])->find();
+            if (!empty($field['goods_pic'])){
+                $field['goods_pic'] = json_decode($field['goods_pic'],true);
+            }
             return view('edit',[
                 'field'=>$field
             ]);
@@ -102,7 +111,7 @@ class GoodsController extends CommonController {
                     $disk = Filesystem::getDiskConfig('public');
                     //保存图片到本地服务器
                     $savename = Filesystem::disk('public')->putFile( 'admin', $file);
-                    return json(['code'=>0,'msg'=>'上传成功','src'=>$disk['url'].'/'.$savename]);
+                    return json(['code'=>0,'msg'=>'上传成功','src'=>$disk['url'].'/'.$savename,'location'=>$disk['url'].'/'.$savename]);
                 } catch (ValidateException $v) {
                     return json(['code'=>-1,'msg'=>$v->getMessage()]);
                 }
@@ -150,7 +159,8 @@ class GoodsController extends CommonController {
             $goodsList = Db::name('goods')->order('create_time','desc')->limit($nextLimit,$params['pageSize'])->select()->toArray();
             foreach ($goodsList as $k=>$g){
                 $qrcode = new QRCode($options);
-                $data = "http://tp6.im/index/index/search.html?m=".$g['requie_id'];
+                $domain = request()->domain();
+                $data = $domain."/index/index/search.html?m=".$g['requie_id'];
                 $goodsList[$k]['qrcodeUrl'] = $qrcode->render($data);
             }
             return json(['code'=>0,'msg'=>'','count'=>$totalCount,'data'=>$goodsList]);
