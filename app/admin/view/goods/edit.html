@@ -88,10 +88,10 @@
                         <div class="goods_pic"></div>
                         {else}
                         <div class="goods_pic" style="display: block;">
-                            {foreach $field.goods_pic as $m}
+                            {volist name="field.goods_pic" id="m"}
                                 <img src="{$m}" alt="{$m}">
                                 <input type="hidden" name="goods_pic[]" value="{$m}">
-                            {/endforeach}
+                            {/volist}
                         </div>
                         {/if}
                     </div>
