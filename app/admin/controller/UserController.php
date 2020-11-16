@@ -26,7 +26,9 @@ class UserController extends CommonController
             }
             $nextLimit = ($params['page']-1) * $params['pageSize'];
             $usersList = Db::name('buy_history')->order('create_time','desc')->limit($nextLimit,$params['pageSize'])->select()->toArray();
-
+            foreach ($usersList as $k=>$l){
+                $usersList[$k]['user_tel'] = decrypt($l['user_tel']);
+            }
             return json(['code'=>0,'msg'=>'','count'=>$totalCount,'data'=>$usersList]);
         }catch (\Exception $e){
             return json(['msg'=>$e->getMessage(),'code'=>-1]);

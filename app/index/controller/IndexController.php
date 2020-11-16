@@ -21,6 +21,7 @@ class IndexController extends BaseController
                 throw new ValidateException('invalid token');
             }
             unset($params['__token__']);
+            $params['tel'] = encrypt($params['tel']);
             $requie_id = Db::name('buy_history')->where(['good_requie_id'=>$params['code'],'user_tel'=>$params['tel']])->find();
             if(!$requie_id) {
                 Db::name('buy_history')->insert(['user_tel' => $params['tel'], 'good_requie_id' => $params['code'], 'create_time' => date('Y-m-d H:i:s')]);
@@ -29,7 +30,7 @@ class IndexController extends BaseController
         }else {
             $get = request()->get();
             $get['domain'] = request()->domain();
-            $get['tel'] = isset($get['tel']) && !empty($get['tel']) ? $get['tel'] : '';
+            $get['tel'] = isset($get['tel']) && !empty($get['tel']) ? decrypt($get['tel']) : '';
             return view('search', ['get' => $get]);
         }
     }
